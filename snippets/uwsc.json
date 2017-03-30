@@ -1,0 +1,62 @@
+{
+	"For Next Loop": {
+		"prefix": "for",
+		"body": [
+			"For ${1:index} = ${2:lower} To ${3:Upper}",
+			"\t$0",
+			"Next"
+		],
+		"description": "For Next Loop"
+	},
+	"For i...Next i": {
+		"prefix": "fori",
+		"body": [
+			"For i As ${1:Integer} = ${2:Lower} To ${3:Upper}",
+			"\t$0",
+			"Next i"
+		],
+		"description": "For i...Next i"
+	},
+	"Public Function...": {
+		"prefix": "pf",
+		"body": [
+			"Public Function ${1:FunctionName}(${2:ParameterList})",
+			"\tTRY",
+			"\t\t$0",
+			"\tFINALLY",
+			"\tENDTRY",
+			"\tRETURN ${3:ReturnValue}",
+			"FEND"
+		],
+		"description": "Public Function..."
+	},
+	"Public Procedure ...": {
+		"prefix": "pp",
+		"body": [
+			"Public Procedure ${1:ProcedureName}(${2:ParameterList})",
+			"\tTRY",
+			"\t\t$0",
+			"\tFINALLY",
+			"\tENDTRY",
+			"FEND"
+		],
+		"description": "Public Procedure ..."
+	},
+	"While ... End While": {
+		"prefix": "while",
+		"body": [
+			"WHILE ${1:Boolean}",
+			"\t$0",
+			"WEND"
+		],
+		"description": "While ... End While"
+	},
+    "Text Block": {
+        "prefix": "textb",
+        "body": [
+            "TEXTBLOCK",
+            "$0",
+            "ENDTEXTBLOCK"
+        ]
+    }
+}

@@ -1,0 +1,249 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "uwsc",
+	"patterns": [
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#storages"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#supports"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.double-slash.uwsc",
+				"match": "\\/\\/.*$"
+			}]
+		},
+		"constants": {
+			"patterns": [{
+				"name": "constant.language.builtin.uwsc",
+				"match": "(?i:\\b(true|false|null|empty|nothing)\\b)"
+			},
+			{
+				"name": "constant.character.escape.uwsc",
+				"match": "(?i:\\b(<#cr>|<#dbl>|<#tab>)\\b)"
+			}]
+		},
+		"entities": {
+			"patterns": [
+				{
+					"name": "entity.name.type.uwsc",
+					"match": "\\b(\\S+)\\b"
+				}
+			]
+		},
+		"storages": {
+			"patterns": [
+				{
+					"name": "storage.type.function.uwsc",
+					"match": "(?i:\\b(function|fend|procedure|class|endclass|module|endmodule)\\b)"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.uwsc",
+				"match": "(?i:\\b(ifb|if|while|for|until|repeat|endif|wend|next|then|else|elseif|to|step|in|select|selend|case|default|continue|break|call|exit|exitexit|print|try|except|finally|endtry|result)\\b)"
+			},
+			{
+				"name": "keyword.define.uwsc",
+				"match": "(?i:\\b(dim|var|public|const|param_str|def_dll|thread|with|endwith|hashtbl|global|this|hash_casecare|hash_sort|hash_exists|hash_remove|hash_key|hash_val|hash_removeall)\\b)"
+			},
+			{
+				"name": "keyword.operator.uwsc",
+				"match": "(?i:\\b(\\(|\\)|\\!|\\*|\\/|mod|\\+|-|>|<|=|and|or|xor|_)\\b)"
+			},
+			{
+				"name": "keyword.option.uwsc",
+				"match": "(?i:\\b(option|explicit|samestr|optpublic|optfinally|specialchar|shortcircuit|nostophotkey|topstopform|fixballon|defaultfont|position|logpath|loglines|logfile|dlgtitle)\\b)"
+			},
+			{
+				"name": "keyword.ole.uwsc",
+				"match": "(?i:\\b(com_err_ign|com_err_ret)\\b)"
+			},
+			{
+				"name": "keyword.dll.uwsc",
+				"match": "(?i:\\b(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray)\\b)"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.uwsc",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": []
+		},
+		"supports": {
+			"name": "support.function.builtin.uwsc",
+			"patterns": [{
+				"name": "support.function.builtin.window.uwsc",
+				"match": "(?i:\\b(getid|clkitem|chkbtn|ctrlwin|sendstr|getstr|getitem|getslctlst|setslider|getslider|sckey|getallwin|status|mouseorg|peekcolor|chkimg|saveimg|muscur|posacc)\\b)"
+			},
+			{
+				"name": "support.function.builtin.window.low.uwsc",
+				"match": "(?i:\\b(mmv|btn|kbd|acw)\\b)"
+			},
+			{
+				"name": "support.function.builtin.dialog.uwsc",
+				"match": "(?i:\\b(input|msgbox|slctbox|popupmenu|baloon|fukidasi|stopform|logprint|monitor)\\b)"
+			},
+			{
+				"name": "support.function.builtin.control.uwsc",
+				"match": "(?i:\\b(exec|sleep|doscmd|powershell|sound|gettime|poff|kindos|cpuuserate|getkeystate|sethotkey|lockhard|lockharex|eval|sensor)\\b)"
+			},
+			{
+				"name": "support.function.builtin.system.uwsc",
+				"match": "(?i:\\b(getctlhnd|idtohnd|vartype)\\b)"
+			},
+			{
+				"name": "support.function.builtin.string.uwsc",
+				"match": "(?i:\\b(copy[b]*|pos[b]*|length[sb]*|chknum|val|replace|chgmoj|trim|format|chr[b]*|asc[b]*|isunicode|strconv|token|betweenstr)\\b)"
+			},
+			{
+				"name": "support.function.builtin.array.uwsc",
+				"match": "(?i:\\b(resize|setclear|shiftarray|calcarray|split|join|slice|qsort)\\b)"
+			},
+			{
+				"name": "support.function.builtin.file.uwsc",
+				"match": "(?i:\\b(fopen|fget|fput|fdelline|fclose|deletefile|getdir|dropfile)\\b)"
+			},
+			{
+				"name": "support.function.builtin.ini.uwsc",
+				"match": "(?i:\\b(readini|writeini|deleteini)\\b)"
+			},
+			{
+				"name": "support.function.builtin.ole.uwsc",
+				"match": "(?i:\\b(createoleobj|getacticeoleobj|getoleitem|oleevent|safearray)\\b)"
+			},
+			{
+				"name": "support.function.builtin.speech.uwsc",
+				"match": "(?i:\\b(speak|recostate|dictate)\\b)"
+			},
+			{
+				"name": "support.function.builtin.iexplorer.uwsc",
+				"match": "(?i:\\b(iegetdata|iesetdata|iegetsrc|iesetsrc|ielink|encode|decode)\\b)"
+			},
+			{
+				"name": "support.function.builtin.math.uwsc",
+				"match": "(?i:\\b(random|abs|zcut|int|ceil|round|sqrt|power|exp|ln|logn|sin|cos|tan|arcsin|arccos|arctan)\\b)"
+			},
+			{
+				"name": "support.function.builtin.window.constant.uwsc",
+				"match": "(?i:\\b(get_active_win|get_frompoint_win|get_frompoint_obj|get_thisuwsc_win|get_logprint_win|get_balloon_win|get_fukidasi_win|get_from_win|get_from_win2|get_schedule_win)\\b)"
+			},
+			{
+				"name": "support.function.builtin.item.constant.uwsc",
+				"match": "(?i:\\b(clk_btn|clk_list|clk_tab|clk_menu|clk_treeview|clk_listview|clk_toolbar|clk_link|clk_acc|clk_short|clk_back|clk_musmove|clk_rightclk|clk_leftclk|clk_dblclk|clk_fromlast|clk_continue)\\b)"
+			},
+			{
+				"name": "support.function.builtin.status.constant.uwsc",
+				"match": "(?i:\\b(st_title|st_class|st_x|st_y|st_width|st_height|st_clx|st_cly|st_clwidth|st_clheight|st_parent|st_icon|st_maxmized|st_visible|st_active|st_busy|st_isid|st_win64|st_path|st_process|st_monitor)\\b)"
+			},
+			{
+				"name": "support.function.builtin.morg.constant.uwsc",
+				"match": "(?i:\\b(morg_client|morg_direct|morg_fore|morg_back)\\b)"
+			},
+			{
+				"name": "support.function.builtin.color.constant.uwsc",
+				"match": "(?i:\\b(col_rgb|col_r|col_g|col_b)\\b)"
+			},
+			{
+				"name": "support.function.builtin.image.constant.uwsc",
+				"match": "(?i:\\b(img_msk_bgr[1-4]|img_msk_[rgb][1-4])\\b)"
+			},
+			{
+				"name": "support.function.builtin.mouse.constant.uwsc",
+				"match": "(?i:\\b(cur_appstarting|cur_arrow|cur_cross|cur_hand|cur_help|cur_ibeam|cur_no|cur_sizeall|cur_sizenesw|cur_sizens|cur_nwse|cur_sizewe|cur_uparrow|cur_wait)\\b)"
+			},
+			{
+				"name": "support.function.builtin.acc.constant.uwsc",
+				"match": "(?i:\\b(acc_acc|acc_api|acc_name|acc_value|acc_role|acc_state|acc_description|acc_location|acc_back)\\b)"
+			},
+			{
+				"name": "support.function.builtin.button.constant.uwsc",
+				"match": "(?i:\\b(btn_yes|btn_no|btn_ok|btn_cancel|btn_abort|btn_retry|btn_ignore)\\b)"
+			},
+			{
+				"name": "support.function.builtin.select.constant.uwsc",
+				"match": "(?i:\\b(slct_btn|slct_chk|slct_rdo|slct_cmb|slct_lst|slct_str|slct_num|slct_1|slct_2)\\b)"
+			},
+			{
+				"name": "support.function.builtin.monitor.constant.uwsc",
+				"match": "(?i:\\b(mon_[xy]|mon_width|mon_height|mon_name)\\b)"
+			},
+			{
+				"name": "support.function.builtin.keystate.constant.uwsc",
+				"match": "(?i:\\b(vk_[mlr]button|tgl_ime|tgl_numlock|tgl_capslock|tgl_scrolllock|tgl_kanalock)\\b)"
+			},
+			{
+				"name": "support.function.builtin.moduration.constant.uwsc",
+				"match": "(?i:\\b(mod_alt|mod_control|mod_shift|mod_win)\\b)"
+			},
+			{
+				"name": "support.function.builtin.lock.constant.uwsc",
+				"match": "(?i:\\b(lock_keyboard|lock_mouse)\\b)"
+			},
+			{
+				"name": "support.function.builtin.sensor.constant.uwsc",
+				"match": "(?i:\\b(snsr_biometric_humanpresense|snsr_biometric_humanproximity|snsr_electrical_capacitance|snsr_electrical_resistance|snsr_electrical_inductance|snsr_electrical_current|snsr_electrical_voltage|snsr_electrical_power|snsr_environmental_temperature|snsr_environmental_pressure|snsr_environmental_humidity|snsr_environmental_winddirection|snsr_environmental_windspeed|snsr_light_lux|snsr_light_temperature|snsr_mechanical_force|snsr_mechanical_abspressure|snsr_mechanical_gaugepressure|snsr_mechanical_weight|snsr_motion_acceleration[x-z]|snsr_motion_angleaccel[x-z]|snsr_motion_speed|snsr_scanner_rfidtag|snsr_scanner_barcodedata|snsr_orientation_tilt[x-z]|snsr_orientation_distance[x-z]|snsr_orientation_magheading|snsr_orientation_trueheading|snsr_orientation_compmagheading|snsr_orientation_comptrueheading|snsr_location_altitude|snsr_location_latitude|snsr_location_longitude|snsr_location_speed)\\b)"
+			},
+			{
+				"name": "support.function.builtin.stringconverter.constant.uwsc",
+				"match": "(?i:\\b(sc_lowercase|sc_uppercase|sc_hiragana|sc_katakana|sc_halfwidth|sc_fullwidth)\\b)"
+			},
+			{
+				"name": "support.function.builtin.calcarray.constant.uwsc",
+				"match": "(?i:\\b(calc_add|calc_min|calc_max|calc_avr)\\b)"
+			},
+			{
+				"name": "support.function.builtin.qsort.constant.uwsc",
+				"match": "(?i:\\b(qsrt_[ad]|qsrt_unicode[ad]|qsrt_natural[ad])\\b)"
+			},
+			{
+				"name": "support.function.builtin.fileopenmode.constant.uwsc",
+				"match": "(?i:\\b(f_read|f_write|f_exists|f_exclusive|f_tab|f_nocr|f_write8[b]*|f_write1[6]*[b]*)\\b)"
+			},
+			{
+				"name": "support.function.builtin.fileio.constant.uwsc",
+				"match": "(?i:\\b(f_linecount|f_alltext|f_insert)\\b)"
+			},
+			{
+				"name": "support.function.builtin.variable.type.uwsc",
+				"match": "(?i:\\b(var_empty|var_null|var_smallint|var_integer|var_double|var_currency|var_date|var_dispatch|var_error|var_boolean|var_unknown|var_sbyte|var_byte|var_[d]*word|var_int64|var_[au]str|var_array)\\b)"
+			},
+			{
+				"name": "support.function.builtin.variable.global.uwsc",
+				"match": "(?i:\\b(g_img_[xy]|all_img_[xy]|hotkey_vk|hotkey_mod|err_value|getdir_files|all_ole_item|event_prm|com_err_flg|try_errmsg|try_errline)\\b)"
+			},
+			{
+				"name": "support.function.builtin.variable.special.uwsc",
+				"match": "(?i:\\b(g_mouse_[xy]|get_win_dir|get_sys_dir|get_cur_dir|get_appdata_dir|get_uwsc_dir|get_uwsc_ver|get_uwsc_pro|get_uwsc_name|g_screen_[whc])\\b)"
+			}]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "variable.other.numeric.uwsc",
+					"match": "[-]*[\\d.]+"
+				}
+			]
+		}
+	},
+	"scopeName": "source.uwsc"
+}

@@ -1,0 +1,31 @@
+{
+    "name": "uwsc-support",
+    "displayName": "uwsc",
+    "description": "uwsc language support",
+    "icon": "images/uwsc-icon.png",
+    "version": "0.0.2",
+    "publisher": "nalulabo",
+    "engines": {
+        "vscode": "^1.10.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "uwsc",
+            "aliases": ["uwsc", "uwsc"],
+            "extensions": [".uws"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "uwsc",
+            "scopeName": "source.uwsc",
+            "path": "./syntaxes/uwsc.tmLanguage.json"
+        }],
+        "snippets": [{
+            "language": "uwsc",
+            "path": "./snippets/uwsc.json"
+        }]
+    }
+}
